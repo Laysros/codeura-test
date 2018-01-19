@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head th:include="fragments/master::style"></head>
+<title>Customer Detail</title>
+
+<body>	   
+	
+	<div class="container">
+	<div class="row">
+		<h2>Customer Management</h2>
+	</div>
+    <div class="row">
+        <fieldset class="for-panel">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-horizontal">               
+                  <label class="col-xs-5 control-label">Customer ID</label>
+                  <p th:text="*{customer.cid}" class="form-control-static"></p>               
+                  <label class="col-xs-5 control-label">Phone</label>
+                  <p th:text="*{customer.phone}" class="form-control-static"></p>              
+                  <label class="col-xs-5 control-label">Added Date</label>
+                  <p th:text="${#dates.format(customer.date, 'dd/MM/YYYY')}"></p>                           
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-horizontal">               
+                  <label class="col-xs-4 control-label">Customer Name</label>
+                  <p th:text="*{customer.name}" class="form-control-static"></p>            
+                  <label class="col-xs-4 control-label">Email</label>
+                  <p th:text="*{customer.email}" class="form-control-static"></p>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <a id="add_row" href="/list" class="btn btn-default right">Back</a><p></p>
+    </div>
+    
+</div>
+</body>
+</html>
